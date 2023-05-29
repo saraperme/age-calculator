@@ -107,4 +107,7 @@ input::placeholder{
     img{
         display: none;
     }
+    .alert{
+        font-size:1rem;
+    }
 }
