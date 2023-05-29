@@ -19,6 +19,7 @@ main{
     padding: 5rem 3rem;
     border-radius: 25px 25px 50% 25px;
     margin: .5rem;
+    box-shadow: 0 0 1rem .1rem hsla(0, 1%, 44%, 0.25);
 }
 
 .lines{
