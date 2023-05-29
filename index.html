@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <form class="input-date">
+            <div class="day">
+                <label for="day">Day</label>
+                <input type="text" required oninput="calculate()" id="day" placeholder="DD">
+            </div>
+            <div class="month">
+                <label for="month">Month</label>
+                <input type="text" required id="month" oninput="calculate()" placeholder="MM">
+            </div>
+            <div class="year">
+                <label for="year">Year</label>
+                <input type="text" required id="year" oninput="calculate()" placeholder="YYYY">
+            </div>
+        </form>
+        <span class="alert"></span>
+        <section class="lines">
+            <svg height="30" width="100%">
+                <line x1="0" y1="30" x2="650" y2="30" style="stroke:hsl(0, 0%, 86%);stroke-width:1" />
+              </svg>
+            <img class="icon" src="icon-arrow.svg" alt="" style="margin:.5rem;">
+        </section>
+        <section class="calculated-age">
+            <section class="calculated-years">
+                <p class="number"id="calculated-years"></p>
+                <p class="age">Years</p>
+            </section>
+            <section class="calculated-months">
+                <p class="number"id="calculated-months"></p>
+                <p class="age">Months</p>
+            </section>
+            <section class="calculated-days">
+                <p class="number"id="calculated-days"></p>
+                <p class="age">Days</p>
+            </section>
+        </section>
+    </main>
+</body>
+</html>

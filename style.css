@@ -1,0 +1,109 @@
+/* general layout */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: grid;
+    place-items: center;
+    min-height: 100dvh;
+    background: hsl(0, 0%, 94%);
+}
+
+main{
+    background-color: white;
+    padding: 5rem 3rem;
+    border-radius: 25px 25px 50% 25px;
+    margin: .5rem;
+}
+
+.lines{
+    display: flex;
+    justify-content: right;
+}
+
+
+/* input form */
+
+.input-date{
+    display: flex;
+    gap: 1rem;
+    justify-content: left ;
+}
+
+.input-date>*{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width: 11.5rem
+}
+
+label{
+    text-transform: uppercase;
+    font-size: .75rem;
+    color: hsl(0, 1%, 44%);
+}
+
+input{
+    height: 4rem;
+    font-size: 3rem;
+    border: 1px solid hsl(0, 0%, 86%);
+}
+
+input::placeholder{
+    color: hsl(0, 0%, 86%);
+}
+
+.alert{
+    color:hsl(0, 100%, 67%);
+}
+
+
+/* calculated age */
+
+.number{
+    color: hsl(259, 100%, 65%);
+}
+
+.calculated-age>*{
+    display: flex;
+    gap: .5rem;
+    font-size: 5rem;
+    text-transform: lowercase;
+    line-height: 5.1rem;
+    font-style: italic;
+    font-weight: 800;
+}
+
+@media(max-width:750px){
+    .input-date>*{
+        width: 5.5rem
+    }
+    input{
+        font-size: 2rem;
+    }
+}
+
+@media(max-width:550px){
+    .input-date{
+        width: min-content;
+    }
+    .input-date>*{
+        width: 3.5rem;
+        height: 2rem;
+    }
+    input{
+        font-size: 1rem;
+    }
+    .calculated-age>*{
+        font-size: 2.5rem;
+        line-height: 2.6rem;
+    }
+    img{
+        display: none;
+    }
+}
