@@ -19,7 +19,7 @@ const age =(year, month, day, currentDate, calculatedDays, calculatedMonths, cal
     let dateAge=0
     let monthAge=0
 
-    if(currentDate.getDate()>day){
+    if(currentDate.getDate()>=day){
         dateAge = currentDate.getDate()-day
     }
     else{
@@ -27,7 +27,7 @@ const age =(year, month, day, currentDate, calculatedDays, calculatedMonths, cal
         dateAge=31+currentDate.getDate()-day
     }
 
-    if (currentDate.getMonth() >= month)  
+    if (currentDate.getMonth() >= month-1)  
  
         monthAge = currentDate.getMonth() - month+1;  
     else {      
