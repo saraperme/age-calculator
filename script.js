@@ -106,7 +106,7 @@ const checkMonth = month=>{
 
     
 const checkYear=(currentDate, date)=>{
-    return currentDate> date?true:false
+    return currentDate>=date?true:false
 }
 
 
