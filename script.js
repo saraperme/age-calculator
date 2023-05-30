@@ -19,14 +19,7 @@ const age =(year, month, day, currentDate, calculatedDays, calculatedMonths, cal
     let monthAge=0
     let yearAge=0
 
-    console.log(currentDate.getFullYear())
-    if(currentDate.getDate()>=day){
-        dateAge = currentDate.getDate()-day
-    }
-    else{
-        monthAge--
-        dateAge=31+currentDate.getDate()-day
-    }
+
 
     if (currentDate.getMonth() >= month-1)  
  
@@ -42,13 +35,26 @@ const age =(year, month, day, currentDate, calculatedDays, calculatedMonths, cal
         yearAge=currentDate.getFullYear()-year-1
     }
 
+    if(currentDate.getDate()>=day){
+        dateAge = currentDate.getDate()-day
+    }
+    else{
+        monthAge--
+        dateAge=31+currentDate.getDate()-day
+    }
+
     printAge(year, month, day, calculatedDays, calculatedMonths, calculatedYears, dateAge, monthAge,yearAge)
 }
 
 
 // gets value and prints it onto screen if the inputed value is valid
-const printAge= (ear, month, day, calculatedDays, calculatedMonths, calculatedYears, dateAge, monthAge,yearAge)=>{ 
-    if (!checkDay(day, month, year)||!checkMonth(month)||!checkYear(currentDate, year)){
+const printAge= (year, month, day, calculatedDays, calculatedMonths, calculatedYears, dateAge, monthAge,yearAge)=>{ 
+    let date = new Date()
+    date.setFullYear(year)
+    date.setMonth(month)
+    date.setDate(day)
+
+    if (!checkDay(day, month, year)||!checkMonth(month)||!checkYear(currentDate, date)){
         document.querySelector('.alert').innerText="Must be valid date!"
         label.forEach(label=>{
             label.style.color='hsl(0, 100%, 67%)'
@@ -99,8 +105,8 @@ const checkMonth = month=>{
 }
 
     
-const checkYear=(currentDate, year)=>{
-    return currentDate.getFullYear()-year >=0?true:false
+const checkYear=(currentDate, date)=>{
+    return currentDate> date?true:false
 }
 
 
@@ -113,15 +119,12 @@ let calculate = ()=>{
     let calculatedDays = document.getElementById('calculated-days')
     let calculatedMonths= document.getElementById('calculated-months')
     let calculatedYears= document.getElementById('calculated-years')
-
     
     let currentDate = new Date()
-    currentDate.toISOString().split('T')[0]
-    let date = new Date(`${year}-${month}-${day}`)
-    let diff= currentDate-date
+
     
     if(checkInput()){
-        age(year, month, day, currentDate, calculatedDays, calculatedMonths, calculatedYears, diff)
+        age(year, month, day, currentDate, calculatedDays, calculatedMonths, calculatedYears)
     }
 
 }
