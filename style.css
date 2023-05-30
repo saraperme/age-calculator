@@ -17,7 +17,7 @@ body{
 main{
     background-color: white;
     padding: 5rem 3rem;
-    border-radius: 25px 25px 50% 25px;
+    border-radius: 25px 25px 40% 25px;
     margin: .5rem;
     box-shadow: 0 0 1rem .1rem hsla(0, 1%, 44%, 0.25);
 }
@@ -61,6 +61,7 @@ input::placeholder{
 
 .alert{
     color:hsl(0, 100%, 67%);
+    font-size: .7rem;
 }
 
 
@@ -92,10 +93,11 @@ input::placeholder{
 @media(max-width:550px){
     .input-date{
         width: min-content;
+        height: 2.6rem
     }
     .input-date>*{
         width: 3.5rem;
-        height: 2rem;
+        gap: 0;
     }
     input{
         font-size: 1rem;
@@ -107,7 +109,5 @@ input::placeholder{
     img{
         display: none;
     }
-    .alert{
-        font-size:1rem;
-    }
+
 }
