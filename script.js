@@ -7,18 +7,19 @@ let calculatedYears= document.getElementById('calculated-years')
 
 
 let currentDate = new Date()
-currentDate.toISOString().split('T')[0]
 let date = new Date(`${year}-${month}-${day}`)
-let diff= currentDate-date
 let label = document.querySelectorAll('label')
 
 
-const listOfDays =[31,28,31,30,31,30,31,31,30,31,30,31]
 
-const age =(year, month, day, currentDate, calculatedDays, calculatedMonths, calculatedYears, diff)=>{    
+
+
+const age =(year, month, day, currentDate, calculatedDays, calculatedMonths, calculatedYears)=>{    
     let dateAge=0
     let monthAge=0
+    let yearAge=0
 
+    console.log(currentDate.getFullYear())
     if(currentDate.getDate()>=day){
         dateAge = currentDate.getDate()-day
     }
@@ -34,9 +35,20 @@ const age =(year, month, day, currentDate, calculatedDays, calculatedMonths, cal
         monthAge = 12 + currentDate.getMonth()- month+1;  
     }  
 
+    if(currentDate.getDate()>=day&&currentDate.getMonth() >= month-1){
+        yearAge=currentDate.getFullYear()-year
+    }
+    else{
+        yearAge=currentDate.getFullYear()-year-1
+    }
+
+    printAge(year, month, day, calculatedDays, calculatedMonths, calculatedYears, dateAge, monthAge,yearAge)
+}
 
 
-    if (!checkDay(day, month, year)||!checkMonth(month)||!checkYear(diff)){
+// gets value and prints it onto screen if the inputed value is valid
+const printAge= (ear, month, day, calculatedDays, calculatedMonths, calculatedYears, dateAge, monthAge,yearAge)=>{ 
+    if (!checkDay(day, month, year)||!checkMonth(month)||!checkYear(currentDate, year)){
         document.querySelector('.alert').innerText="Must be valid date!"
         label.forEach(label=>{
             label.style.color='hsl(0, 100%, 67%)'
@@ -44,7 +56,7 @@ const age =(year, month, day, currentDate, calculatedDays, calculatedMonths, cal
 
     }
     else{
-        calculatedYears.innerText = Math.floor(diff/1000/60/60/24/365)
+        calculatedYears.innerText = yearAge
         calculatedMonths.innerText= monthAge
         calculatedDays.innerText=  dateAge
         document.querySelector('.alert').innerText=null
@@ -56,37 +68,43 @@ const age =(year, month, day, currentDate, calculatedDays, calculatedMonths, cal
     
 }
     
-    const checkDay=(day, month,year)=>{
-        if(month==1||month>2){
-            if(day>listOfDays[month-1]){
-                return false
-            }
+
+// checks if inputed days are the valid and correct for the month
+
+const checkDay=(day, month,year)=>{
+    const listOfDays =[31,28,31,30,31,30,31,31,30,31,30,31]
+    if(month==1||month>2){
+        if(day>listOfDays[month-1]){
+            return false
         }
-        else if(month==2){
-            let leapYear=false
-            if(year%4==0){
-                leapYear=true
-            }
-            if(leapYear==false&&day>=29){
-                return false
-            }
-            else if(leapYear==true && day>29){
-                return false
-            }
+    }
+    else if(month==2){
+        let leapYear=false
+        if(year%4==0){
+            leapYear=true
         }
+        if(leapYear==false&&day>=29){
+            return false
+        }
+        else if(leapYear==true && day>29){
+            return false
+        }
+    }    
+    return true
+}
+
     
-        return true
-    }
+const checkMonth = month=>{
+    return month<13?true:false
+}
+
     
-    const checkMonth = month=>{
-        console.log(month)
-        console.log(month<13)
-        return month<13?true:false
-    }
-    
-    const checkYear=(diff)=>{
-        return diff>0?true:false
-    }
+const checkYear=(currentDate, year)=>{
+    return currentDate.getFullYear()-year >=0?true:false
+}
+
+
+
 
 let calculate = ()=>{
     let day = document.getElementById('day').value
