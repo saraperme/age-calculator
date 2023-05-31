@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap" rel="stylesheet">
     <script defer src="script.js"></script>
-    <title>Age calculator</title>
+    <title>Document</title>
 </head>
 <body>
     <main>
@@ -27,7 +27,7 @@
                 <input type="text" required id="year" oninput="calculate()" placeholder="YYYY">
             </div>
         </form>
-        <span class="alert"></span>
+        <div class="alert"></div>
         <section class="lines">
             <svg height="30" width="100%">
                 <line x1="0" y1="30" x2="650" y2="30" style="stroke:hsl(0, 0%, 86%);stroke-width:1" />
@@ -37,15 +37,15 @@
         <section class="calculated-age">
             <section class="calculated-years">
                 <p class="number"id="calculated-years"></p>
-                <p class="age">Years</p>
+                <p class="age" id="text-year">Years</p>
             </section>
             <section class="calculated-months">
                 <p class="number"id="calculated-months"></p>
-                <p class="age">Months</p>
+                <p class="age" id="text-month">Months</p>
             </section>
             <section class="calculated-days">
                 <p class="number"id="calculated-days"></p>
-                <p class="age">Days</p>
+                <p class="age" id="text-day">Days</p>
             </section>
         </section>
     </main>
