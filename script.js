@@ -70,22 +70,22 @@ const printAge= (year, month, day, calculatedDays, calculatedMonths, calculatedY
             label.style.color='black'
         })
         if(dateAge==1){
-            document.getElementById('text-day').innerText=Day
+            document.getElementById('text-day').innerText="Day"
         }
         else{
-            document.getElementById('text-day').innerText=Days
+            document.getElementById('text-day').innerText="Days"
         }
         if(monthAge==1){
-            document.getElementById('text-month').innerText=Month
+            document.getElementById('text-month').innerText="Month"
         }
         else{
-            document.getElementById('text-month').innerText=Months
+            document.getElementById('text-month').innerText="Months"
         }
         if(yearAge==1){
-            document.getElementById('text-year').innerText=Year
+            document.getElementById('text-year').innerText="Year"
         }
         else{
-            document.getElementById('text-year').innerText=Years
+            document.getElementById('text-year').innerText="Years"
         }
         
     }
