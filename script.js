@@ -69,6 +69,24 @@ const printAge= (year, month, day, calculatedDays, calculatedMonths, calculatedY
         label.forEach(label=>{
             label.style.color='black'
         })
+        if(dateAge==1){
+            document.getElementByID('text-day').innerText=Day
+        }
+        else{
+            document.getElementByID('text-day').innerText=Days
+        }
+        if(monthAge==1){
+            document.getElementByID('text-month').innerText=Month
+        }
+        else{
+            document.getElementByID('text-month').innerText=Months
+        }
+        if(yearAge==1){
+            document.getElementByID('text-year').innerText=Year
+        }
+        else{
+            document.getElementByID('text-year').innerText=Years
+        }
         
     }
     
