@@ -63,6 +63,9 @@ let printAge= (year, month, day, calculatedDays, calculatedMonths, calculatedYea
         document.querySelector('.alert').innerText="Must be valid date!"
         label.forEach(label=>{
             label.style.color='hsl(0, 100%, 67%)'
+            console.log(checkDay(day, month, year)
+            console.log(checkMonth(month))
+            console.log(checkYear(currentDate, date))
         })
 
     }
