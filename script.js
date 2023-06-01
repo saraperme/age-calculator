@@ -138,7 +138,7 @@ let calculate = ()=>{
     let calculatedYears= document.getElementById('calculated-years')
     
     let currentDate = new Date()
-
+    console.log(currentDate)
     
     if(checkInput()){
         age(year, month, day, currentDate, calculatedDays, calculatedMonths, calculatedYears)
