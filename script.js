@@ -131,9 +131,13 @@ const checkMonth = month=>{
 }
 
     
-const checkYear=(currentDate, date)=>{
+const checkYear=(currentDate, day, month, year)=>{
+    if (currentDate.getFullYear()<year){
+        return false
+    }
+
     return currentDate>=date?true:false
-    console.log(currentDate>=date)
+    console.log(currentDate-date)
 }
 
 
