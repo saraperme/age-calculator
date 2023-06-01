@@ -41,17 +41,17 @@ const age =(year, month, day, currentDate, calculatedDays, calculatedMonths, cal
         dateAge=31+currentDate.getDate()-day
     }
 
-    printAge(year, month, day, calculatedDays, calculatedMonths, calculatedYears, dateAge, monthAge,yearAge)
+    printAge(year, month, day, calculatedDays, calculatedMonths, calculatedYears, dateAge, monthAge,yearAge,currentDate)
 }
 
 
 // gets value and prints it onto screen if the inputed value is valid
-let printAge= (year, month, day, calculatedDays, calculatedMonths, calculatedYears, dateAge, monthAge,yearAge)=>{ 
+let printAge= (year, month, day, calculatedDays, calculatedMonths, calculatedYears, dateAge, monthAge,yearAge,currentDate)=>{ 
     let date = new Date()
     date.setFullYear(year)
     date.setMonth(month)
     date.setDate(day)
-    let currentDate = new Date()
+    
 
     if (!checkDay(day, month, year)||!checkMonth(month)||!checkYear(currentDate, date)){
         document.querySelector('.alert').innerText="Must be valid date!"
