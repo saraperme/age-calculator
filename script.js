@@ -54,7 +54,7 @@ const age =(year, month, day, currentDate, calculatedDays, calculatedMonths, cal
 let printAge= (year, month, day, calculatedDays, calculatedMonths, calculatedYears, dateAge, monthAge,yearAge,currentDate)=>{ 
     let date = new Date()
     date.setFullYear(year)
-    date.setMonth(month)
+    date.setMonth(month-1)
     date.setDate(day)
     
 
@@ -130,10 +130,8 @@ const checkMonth = month=>{
 }
 
     
-const checkYear=(currentDate, date, day, month, year)=>{
-    date.setMonth(month-1)
-    
-    console.log(date)
+const checkYear=(currentDate, date)=>{
+
     return currentDate>=date?true:false
 
 }
