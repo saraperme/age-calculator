@@ -6,8 +6,6 @@ let calculatedMonths= document.getElementById('calculated-months')
 let calculatedYears= document.getElementById('calculated-years')
 
 
-let currentDate = new Date()
-let date = new Date(`${year}-${month}-${day}`)
 let label = document.querySelectorAll('label')
 
 
@@ -48,7 +46,7 @@ const age =(year, month, day, currentDate, calculatedDays, calculatedMonths, cal
 
 
 // gets value and prints it onto screen if the inputed value is valid
-const printAge= (year, month, day, calculatedDays, calculatedMonths, calculatedYears, dateAge, monthAge,yearAge)=>{ 
+let printAge= (year, month, day, calculatedDays, calculatedMonths, calculatedYears, dateAge, monthAge,yearAge)=>{ 
     let date = new Date()
     date.setFullYear(year)
     date.setMonth(month)
