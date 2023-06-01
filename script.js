@@ -126,6 +126,7 @@ const checkMonth = month=>{
     
 const checkYear=(currentDate, date)=>{
     return currentDate>=date?true:false
+    console.log(currentDate>=date)
 }
 
 
