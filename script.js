@@ -137,7 +137,7 @@ const checkYear=(currentDate, date, day, month, year)=>{
     }
 
     return currentDate>=date?true:false
-    console.log(currentDate-date)
+    console.log(date)
 }
 
 
