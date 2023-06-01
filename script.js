@@ -28,11 +28,13 @@ const age =(year, month, day, currentDate, calculatedDays, calculatedMonths, cal
 
     if(currentDate.getDate()>=day&&currentDate.getMonth() >= month-1||year==currentDate.getYear()){
         yearAge=currentDate.getFullYear()-year
+        console.log('here')
 
     }
         
     else{
         yearAge=currentDate.getFullYear()-year-1
+        console.log('here')
   
     }
 
