@@ -26,14 +26,14 @@ const age =(year, month, day, currentDate, calculatedDays, calculatedMonths, cal
         monthAge = 12 + currentDate.getMonth()- month+1;  
     }  
 
-    if(currentDate.getDate()>=day&&currentDate.getMonth() >= month-1||year==currentDate.getYear()){
-        yearAge=currentDate.getFullYear()-year
+    if(currentDate.getDate()<day&&currentDate.getMonth() <month-1){
+        yearAge=currentDate.getFullYear()-year-1
         console.log('here')
 
     }
         
     else{
-        yearAge=currentDate.getFullYear()-year-1
+        yearAge=currentDate.getFullYear()-year
         console.log('here')
   
     }
