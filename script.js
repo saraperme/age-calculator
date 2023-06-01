@@ -51,6 +51,7 @@ let printAge= (year, month, day, calculatedDays, calculatedMonths, calculatedYea
     date.setFullYear(year)
     date.setMonth(month)
     date.setDate(day)
+    let currentDate = new Date()
 
     if (!checkDay(day, month, year)||!checkMonth(month)||!checkYear(currentDate, date)){
         document.querySelector('.alert').innerText="Must be valid date!"
