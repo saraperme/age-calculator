@@ -28,14 +28,10 @@ const age =(year, month, day, currentDate, calculatedDays, calculatedMonths, cal
 
     if(currentDate.getDate()<day&&currentDate.getMonth() <month-1){
         yearAge=currentDate.getFullYear()-year-1
-        console.log('here')
-
     }
         
     else{
         yearAge=currentDate.getFullYear()-year
-        console.log('here')
-  
     }
 
     if(currentDate.getDate()>=day){
@@ -62,7 +58,6 @@ let printAge= (year, month, day, calculatedDays, calculatedMonths, calculatedYea
         document.querySelector('.alert').innerText="Must be valid date!"
         label.forEach(label=>{
             label.style.color='hsl(0, 100%, 67%)'
-        console.log(date)
         })
 
     }
@@ -71,7 +66,6 @@ let printAge= (year, month, day, calculatedDays, calculatedMonths, calculatedYea
         calculatedMonths.innerText= monthAge
         calculatedDays.innerText=  dateAge
         
-        console.log(date)
         document.querySelector('.alert').innerText=null
         label.forEach(label=>{
             label.style.color='black'
