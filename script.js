@@ -59,13 +59,13 @@ let printAge= (year, month, day, calculatedDays, calculatedMonths, calculatedYea
     date.setDate(day)
     
 
-    if (!checkDay(day, month, year)||!checkMonth(month)||!checkYear(currentDate, date)){
+    if (!checkDay(day, month, year)||!checkMonth(month)||!checkYear(currentDate, date,day,month,year)){
         document.querySelector('.alert').innerText="Must be valid date!"
         label.forEach(label=>{
             label.style.color='hsl(0, 100%, 67%)'
             console.log(checkDay(day, month, year))
             console.log(checkMonth(month))
-            console.log(checkYear(currentDate, date))
+            console.log(checkYear(currentDate, date,day,month,year))
         })
 
     }
@@ -131,7 +131,7 @@ const checkMonth = month=>{
 }
 
     
-const checkYear=(currentDate, day, month, year)=>{
+const checkYear=(currentDate, date, day, month, year)=>{
     if (currentDate.getFullYear()<year){
         return false
     }
