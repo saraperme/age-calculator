@@ -32,7 +32,7 @@ const age =(year, month, day, currentDate, calculatedDays, calculatedMonths, cal
     }
     else{
         yearAge=currentDate.getFullYear()-year-1
-        console.log(yearAge=currentDate.getFullYear()-year-1)
+        console.log(yearAge=currentDate.getFullYear())
     }
 
     if(currentDate.getDate()>=day){
