@@ -26,13 +26,13 @@ const age =(year, month, day, currentDate, calculatedDays, calculatedMonths, cal
         monthAge = 12 + currentDate.getMonth()- month+1;  
     }  
 
-    if(currentDate.getDate()<=day&&currentDate.getMonth() >= month-1){
-        yearAge=currentDate.getFullYear()-year
-        console.log( currentDate.getFullYear())
+    if(currentDate.getDate()>=day&&currentDate.getMonth() >= month-1){
+        yearAge=currentDate.getFullYear()-year-1
+
     }
     else{
-        yearAge=currentDate.getFullYear()-year-1
-        console.log(yearAge=currentDate.getFullYear())
+        yearAge=currentDate.getFullYear()-year
+  
     }
 
     if(currentDate.getDate()>=day){
@@ -140,7 +140,7 @@ let calculate = ()=>{
     let calculatedYears= document.getElementById('calculated-years')
     
     let currentDate = new Date()
-    console.log(currentDate)
+   
     
     if(checkInput()){
         age(year, month, day, currentDate, calculatedDays, calculatedMonths, calculatedYears)
